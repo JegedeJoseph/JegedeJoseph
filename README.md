@@ -4,12 +4,12 @@
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=jegedejoseph&label=Profile%20views&color=0e75b6&style=flat" alt="jegedejoseph" /> </p>
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=jegedejoseph" alt="jegedejoseph" /></a> </p>
+[![trophy](https://github-profile-trophy.vercel.app/?username=jegedejoseph)](https://github.com/ryo-ma/github-profile-trophy)
+- 🔭 I’m open to collaborate on  **AI and Finance ** related projects
 
-- 🔭 I’m currently working on **Bill of Quantity web application**
+- 🌱 I’m currently learning **Angular, Vue, Php,**
 
-- 🌱 I’m currently learning **HTML, CSS, React,**
-
-- 👯 I’m looking to collaborate on **Web applications on business solutions**
+- 👯 I’m building and Locked-in to build and deploy **Digital solutions in the FinTech industry**
 
 - 📫 How to reach me **jjegede78@gmail.com**
 
