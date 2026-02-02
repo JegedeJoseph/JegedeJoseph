@@ -5,7 +5,7 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="[![trophy](https://github-profile-trophy.vercel.app/?username=jegedejoseph)](https://github.com/ryo-ma/github-profile-trophy)" alt="jegedejoseph" /></a> </p>
 
-- 🔭 I’m open to collaborate on  **AI and Finance **  related projects
+- 🔭 I’m open to collaborate on  **AI and Finance**  related projects
 
 - 🌱 I’m currently learning **Angular, Vue, Php,**
 
