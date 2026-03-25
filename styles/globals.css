@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 html, body, #__next {
   height: 100%;
 }
@@ -10,4 +11,33 @@ body {
   @apply bg-gray-50 text-gray-900 antialiased;
 }
 
-.container { @apply max-w-4xl mx-auto px-4; }
+.container { @apply max-w-5xl mx-auto px-4; }
+
+/* small helpers used by components */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* Typography tweaks */
+h1 { @apply text-gray-900 leading-tight; }
+h2 { @apply text-gray-900; }
+
+/* Simple CSS animations used by components */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation-name: fadeUp;
+  animation-duration: 520ms;
+  animation-timing-function: cubic-bezier(.2,.9,.2,1);
+  animation-fill-mode: both;
+}
+
+.card-shadow { box-shadow: 0 6px 18px rgba(16,24,40,0.06); }
+
+/* Responsive utilities for fine spacing adjustments */
+@media (min-width: 768px) {
+  .container { padding-left: 0; padding-right: 0; }
+}
+
+

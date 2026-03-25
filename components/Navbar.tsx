@@ -11,7 +11,7 @@ export default function Navbar() {
           <a className="text-xl font-semibold">Your Name</a>
         </Link>
 
-        <nav className="hidden md:flex space-x-6 text-sm text-gray-700">
+        <nav className="hidden md:flex space-x-6 text-sm text-gray-700 items-center">
           <a href="#about" className="hover:underline">About</a>
           <a href="#projects" className="hover:underline">Projects</a>
           <a href="#contact" className="hover:underline">Contact</a>
@@ -39,10 +39,10 @@ export default function Navbar() {
 
       {open && (
         <div className="md:hidden bg-white/95 border-t">
-          <div className="container flex flex-col py-4">
-            <a href="#about" onClick={() => setOpen(false)} className="py-2">About</a>
-            <a href="#projects" onClick={() => setOpen(false)} className="py-2">Projects</a>
-            <a href="#contact" onClick={() => setOpen(false)} className="py-2">Contact</a>
+          <div className="container flex flex-col py-4 text-lg">
+            <a href="#about" onClick={() => setOpen(false)} className="py-3">About</a>
+            <a href="#projects" onClick={() => setOpen(false)} className="py-3">Projects</a>
+            <a href="#contact" onClick={() => setOpen(false)} className="py-3">Contact</a>
           </div>
         </div>
       )}

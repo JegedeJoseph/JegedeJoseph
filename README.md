@@ -45,6 +45,47 @@ Next steps
 - Add animations and responsive tweaks to match the Figma design
 - Add contact form (API route) and analytics before deploy
 
+Contact form
+- A client contact form and a placeholder API route were added at `components/ContactForm.tsx` and `pages/api/contact.ts`.
+- The API currently returns success; wire an email provider (SendGrid, SMTP) or store submissions to a database to capture messages.
+
+Env variables for email and analytics
+
+- `SMTP_HOST` — SMTP server host (e.g., smtp.gmail.com)
+- `SMTP_PORT` — SMTP server port (e.g., 465 for SSL or 587)
+- `SMTP_USER` — SMTP username (email address)
+- `SMTP_PASS` — SMTP password / app password
+- `CONTACT_TO` — recipient email for contact form messages
+- `NEXT_PUBLIC_GA_ID` — Google Analytics measurement ID (e.g., G-XXXXXXX)
+
+Place these in a `.env.local` file for local development. Example:
+
+```
+SMTP_HOST=smtp.example.com
+SMTP_PORT=465
+SMTP_USER=you@example.com
+SMTP_PASS=yourpassword
+CONTACT_TO=you@example.com
+NEXT_PUBLIC_GA_ID=G-XXXXXXX
+```
+
+Deploy to Vercel
+
+1. Create a Git repository and push the project to GitHub, GitLab, or Bitbucket.
+2. Sign in to https://vercel.com and import the repository (Vercel auto-detects Next.js).
+3. Set any required environment variables on the Vercel dashboard (e.g., API keys for email providers).
+4. Deploy; Vercel will run `npm run build` automatically.
+
+Quick commands
+
+```bash
+# install deps
+npm install
+
+# run dev server
+npm run dev
+```
+
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=jegedejoseph&show_icons=true&locale=en&layout=compact" alt="jegedejoseph" /></p>
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=jegedejoseph&show_icons=true&locale=en" alt="jegedejoseph" /></p>
