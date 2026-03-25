@@ -26,6 +26,47 @@ h2 { @apply text-gray-900; }
   to { opacity: 1; transform: translateY(0); }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-page: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-primary: #2563EB;
+  --color-accent: #06B6D4;
+  --color-muted: #64748B;
+}
+
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background-color: var(--color-page);
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container { @apply max-w-6xl mx-auto px-6; }
+
+/* small helpers used by components */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* Typography tweaks */
+h1 { @apply text-gray-900 leading-tight; }
+h2 { @apply text-gray-900; }
+
+/* Simple CSS animations used by components */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .fade-up {
   animation-name: fadeUp;
   animation-duration: 520ms;
@@ -33,7 +74,7 @@ h2 { @apply text-gray-900; }
   animation-fill-mode: both;
 }
 
-.card-shadow { box-shadow: 0 6px 18px rgba(16,24,40,0.06); }
+.card-shadow { box-shadow: 0 12px 30px rgba(15,23,42,0.08); }
 
 /* Responsive utilities for fine spacing adjustments */
 @media (min-width: 768px) {
