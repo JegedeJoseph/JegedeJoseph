@@ -7,9 +7,7 @@ export default function Navbar() {
   return (
     <header className="py-4 bg-white/60 backdrop-blur-sm sticky top-0 z-20">
       <div className="container flex items-center justify-between">
-        <Link href="/">
-          <a className="text-xl font-semibold">Your Name</a>
-        </Link>
+        <Link href="/" className="text-xl font-semibold">Your Name</Link>
 
         <nav className="hidden md:flex space-x-6 text-sm text-gray-700 items-center">
           <a href="#about" className="hover:underline">About</a>
