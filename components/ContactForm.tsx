@@ -84,7 +84,7 @@ export default function ContactForm() {
                   </svg>
                 ),
                 label: 'WhatsApp',
-                value: '+234 9032791517',
+                value: '+234 903 279 1517',
                 href: 'https://wa.me/2349032791517?text=Hi%20Joseph%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect!',
                 iconColor: '#25D366',
               },
