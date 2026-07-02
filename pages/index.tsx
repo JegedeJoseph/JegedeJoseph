@@ -30,7 +30,7 @@ export default function Home() {
               <div className="card-flat p-6">
                 <p className="text-sm text-muted leading-relaxed mb-4">
                   I'm <strong className="text-dark">Joseph Oluwapelumi Jegede</strong>, a final-year Computer Science
-                  student at <strong className="text-dark">Anchor University, Lagos</strong> (CGPA: 4.39/5.00) and a
+                  student at <strong className="text-dark">Anchor University, Lagos</strong> and a
                   software developer driven by the challenge of building complete technical solutions from the ground up.
                 </p>
                 <p className="text-sm text-muted leading-relaxed mb-4">
