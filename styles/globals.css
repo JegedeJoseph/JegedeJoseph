@@ -31,6 +31,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Hide default cursor on desktop — replaced by CursorFollower */
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
 html, body, #__next {
   min-height: 100%;
 }

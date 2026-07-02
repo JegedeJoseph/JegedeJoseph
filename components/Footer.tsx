@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
 
           <p className="text-xs text-muted text-center">
-            ©   {year}     Joseph Jegede · Built with Next.js &amp; ☕
+            &copy; Copyright  -  Joseph Jegede  {year}  ☕
           </p>
 
           {/* Socials */}
