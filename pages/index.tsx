@@ -33,6 +33,7 @@ export default function Home() {
                   student at <strong className="text-dark">Anchor University, Lagos</strong> and a
                   software developer driven by the challenge of building complete technical solutions from the ground up.
                 </p>
+                <p className="text-sm text-muted leading-relaxed mb-4">I'm currently working on an ecommerce web app that would give room to showcase the products and an admin dashboard to control payments, available stocks and customers</p>
                 <p className="text-sm text-muted leading-relaxed mb-4">
                   As <strong className="text-dark">Chief Technology Officer at MediaErrands News</strong>, I direct
                   the company's entire digital strategy — from server infrastructure and backend performance to SEO
