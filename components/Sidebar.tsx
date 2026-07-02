@@ -1,44 +1,166 @@
+import { useEffect, useRef } from 'react'
+
+const skills = [
+  { name: 'JavaScript / TypeScript', pct: 88 },
+  { name: 'React / Next.js',         pct: 85 },
+  { name: 'Node.js / Firebase',      pct: 80 },
+  { name: 'Java / Spring Boot',      pct: 72 },
+  { name: 'Python (ML / Data)',       pct: 75 },
+  { name: 'SQL / PostgreSQL',         pct: 78 },
+]
+
+const socials = [
+  {
+    label: 'GitHub',
+    href:  'https://github.com/JegedeJoseph',
+    icon:  (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+      </svg>
+    ),
+  },
+  {
+    label: 'LinkedIn',
+    href:  'https://linkedin.com/in/josephjegede',
+    icon:  (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+    ),
+  },
+  {
+    label: 'Twitter',
+    href:  'https://x.com/JoJegs',
+    icon:  (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.629 5.905-5.629zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    ),
+  },
+]
+
 export default function Sidebar() {
+  const barRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  // Animate skill bars on mount
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      barRefs.current.forEach((el, i) => {
+        if (el) el.style.width = `${skills[i].pct}%`
+      })
+    }, 400)
+    return () => clearTimeout(timeout)
+  }, [])
+
   return (
-    <aside className="hidden lg:block lg:col-span-3 xl:col-span-3">
-      <div className="sticky top-20 space-y-6">
-        <div className="bg-white rounded-2xl p-6 card-shadow text-center">
-          <img src="/avatar.svg" alt="avatar" className="w-24 h-24 mx-auto rounded-full mb-4" />
-          <div className="text-lg font-semibold">Rayan Adlrdard</div>
-          <div className="text-sm text-muted">Front-end Developer</div>
-          <div className="mt-4 flex justify-center gap-3">
-            <a href="#" className="text-primary">•</a>
-            <a href="#" className="text-primary">•</a>
+    <aside className="sidebar-sticky">
+      <div className="flex flex-col gap-4">
+
+        {/* ── Profile card ── */}
+        <div className="glass p-6 text-center">
+          <div className="relative inline-block mb-4">
+            <img
+              src="https://github.com/JegedeJoseph.png"
+              alt="Joseph Jegede"
+              className="w-24 h-24 rounded-2xl object-cover mx-auto"
+              style={{ boxShadow: '0 8px 24px rgba(79,70,229,0.25)' }}
+            />
+            {/* Online indicator */}
+            <span
+              className="absolute bottom-1 right-1 w-4 h-4 rounded-full border-2 border-white"
+              style={{ background: '#10B981' }}
+            />
+          </div>
+
+          <h2 className="font-outfit font-bold text-lg text-dark leading-tight">
+            Joseph Oluwapelumi Jegede
+          </h2>
+          <p className="text-sm text-muted mt-1">Software Developer</p>
+
+          <div className="mt-3 flex justify-center">
+            <span className="badge-open">Open to Work</span>
+          </div>
+
+          {/* Location */}
+          <div className="mt-4 flex items-center justify-center gap-1.5 text-xs text-muted">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Lagos, Nigeria 🇳🇬
+          </div>
+
+          {/* Social links */}
+          <div className="mt-4 flex justify-center gap-2">
+            {socials.map(s => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={s.label}
+                className="w-9 h-9 rounded-xl flex items-center justify-center text-muted hover:text-primary hover:bg-indigo-50 transition-all duration-200 border border-gray-200 hover:border-indigo-200"
+              >
+                {s.icon}
+              </a>
+            ))}
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl p-6 card-shadow">
-          <h3 className="text-sm font-semibold mb-3">Profile</h3>
-          <ul className="text-sm text-muted space-y-2">
-            <li><strong>Age:</strong> 24</li>
-            <li><strong>Residence:</strong> BD</li>
-            <li><strong>Freelance:</strong> Available</li>
-            <li><strong>Address:</strong> Dhaka, Bangladesh</li>
+        {/* ── Info card ── */}
+        <div className="card-flat p-5">
+          <h3 className="font-outfit font-semibold text-sm text-dark mb-3 uppercase tracking-wide">Profile</h3>
+          <ul className="space-y-2.5 text-sm">
+            {[
+              { label: 'Status',    value: 'Final-year CS Student' },
+              { label: 'Country',   value: 'Nigeria' },
+              { label: 'City',      value: 'Lagos' },
+              { label: 'Email',     value: 'jjegede78@gmail.com', isLink: true },
+            ].map(({ label, value, isLink }) => (
+              <li key={label} className="flex flex-col gap-0.5">
+                <span className="text-xs text-muted uppercase tracking-wider font-medium">{label}</span>
+                {isLink ? (
+                  <a href={`mailto:${value}`} className="text-primary font-medium hover:underline truncate">{value}</a>
+                ) : (
+                  <span className="text-dark font-medium">{value}</span>
+                )}
+              </li>
+            ))}
           </ul>
         </div>
 
-        <div className="bg-white rounded-2xl p-6 card-shadow">
-          <h3 className="text-sm font-semibold mb-3">Languages</h3>
-          <div className="space-y-3 text-sm">
-            <div>Bangla <div className="w-full bg-gray-100 h-2 rounded mt-1"><div className="bg-primary h-2 rounded" style={{ width: '100%' }} /></div></div>
-            <div>English <div className="w-full bg-gray-100 h-2 rounded mt-1"><div className="bg-primary h-2 rounded" style={{ width: '80%' }} /></div></div>
-            <div>Spanish <div className="w-full bg-gray-100 h-2 rounded mt-1"><div className="bg-primary h-2 rounded" style={{ width: '60%' }} /></div></div>
+        {/* ── Skills card ── */}
+        <div className="card-flat p-5">
+          <h3 className="font-outfit font-semibold text-sm text-dark mb-4 uppercase tracking-wide">Skills</h3>
+          <div className="space-y-3">
+            {skills.map((skill, i) => (
+              <div key={skill.name}>
+                <div className="flex justify-between items-center mb-1">
+                  <span className="text-xs font-medium text-dark">{skill.name}</span>
+                  <span className="text-xs text-muted">{skill.pct}%</span>
+                </div>
+                <div className="skill-bar-track">
+                  <div
+                    ref={el => { barRefs.current[i] = el }}
+                    className="skill-bar-fill"
+                    style={{ width: '0%' }}
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl p-6 card-shadow">
-          <h3 className="text-sm font-semibold mb-3">Skills</h3>
-          <div className="space-y-3 text-sm">
-            <div>HTML <div className="w-full bg-gray-100 h-2 rounded mt-1"><div className="bg-accent h-2 rounded" style={{ width: '90%' }} /></div></div>
-            <div>CSS <div className="w-full bg-gray-100 h-2 rounded mt-1"><div className="bg-accent h-2 rounded" style={{ width: '85%' }} /></div></div>
-            <div>React <div className="w-full bg-gray-100 h-2 rounded mt-1"><div className="bg-accent h-2 rounded" style={{ width: '80%' }} /></div></div>
-          </div>
-        </div>
+        {/* ── Download CV ── */}
+        <a href="/resume.pdf" target="_blank" rel="noreferrer" className="btn-primary justify-center text-sm">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download Resume
+        </a>
+
       </div>
     </aside>
   )
