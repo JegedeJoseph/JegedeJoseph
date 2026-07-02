@@ -1,8 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 const stats = [
-  { value: '20+',  label: 'Repositories' },
-  { value: '4.39', label: 'CGPA / 5.00'  },
+  { value: '20+', label: 'Repositories' },
   { value: 'Open', label: 'To Opportunities' },
 ]
 
@@ -55,15 +54,15 @@ export default function Hero() {
           <div className="fade-up flex flex-wrap gap-3 items-center mb-8">
             <a href="#projects" className="btn-primary">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/>
+                <rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8m-4-4v4" />
               </svg>
               See My Work
             </a>
             <a href="/resume.pdf" target="_blank" rel="noreferrer" className="btn-secondary">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="7 10 12 15 17 10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
               Download CV
             </a>
